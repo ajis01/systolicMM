@@ -1,0 +1,462 @@
+[
+  {
+    "class":"firrtl.stage.FirrtlCircuitAnnotation",
+    "circuit":{
+      "info":{
+        
+      },
+      "modules":[
+        {
+          "info":{
+            
+          },
+          "name":"BlackBoxMinus",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"in1",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"in2",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            }
+          ],
+          "defname":"BlackBoxMinus",
+          "params":[
+            
+          ]
+        },
+        {
+          "info":{
+            
+          },
+          "name":"UsesBlackBoxMinusViaResource",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"clock",
+              "direction":{
+                
+              },
+              "tpe":{
+                
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"reset",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":1
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_in1",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_in2",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "info":{
+                  "info":{
+                    "string":"BlackBoxImpl.scala 69:20"
+                  }
+                },
+                "name":"mod0",
+                "module":"BlackBoxMinus",
+                "tpe":{
+                  "fields":[
+                    {
+                      "name":"in1",
+                      "flip":{
+                        
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      }
+                    },
+                    {
+                      "name":"in2",
+                      "flip":{
+                        
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      }
+                    },
+                    {
+                      "name":"out",
+                      "flip":{
+                        
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"BlackBoxImpl.scala 73:10"
+                  }
+                },
+                "loc":{
+                  "name":"io_out",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "kind":{
+                    
+                  },
+                  "flow":{
+                    
+                  }
+                },
+                "expr":{
+                  "expr":{
+                    "name":"mod0",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"in1",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"in2",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "kind":{
+                      
+                    },
+                    "flow":{
+                      
+                    }
+                  },
+                  "name":"out",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "flow":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"BlackBoxImpl.scala 71:15"
+                  }
+                },
+                "loc":{
+                  "expr":{
+                    "name":"mod0",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"in1",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"in2",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "kind":{
+                      
+                    },
+                    "flow":{
+                      
+                    }
+                  },
+                  "name":"in1",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "flow":{
+                    
+                  }
+                },
+                "expr":{
+                  "name":"io_in1",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "kind":{
+                    
+                  },
+                  "flow":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"BlackBoxImpl.scala 72:15"
+                  }
+                },
+                "loc":{
+                  "expr":{
+                    "name":"mod0",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"in1",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"in2",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "kind":{
+                      
+                    },
+                    "flow":{
+                      
+                    }
+                  },
+                  "name":"in2",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "flow":{
+                    
+                  }
+                },
+                "expr":{
+                  "name":"io_in2",
+                  "tpe":{
+                    "width":{
+                      "width":16
+                    }
+                  },
+                  "kind":{
+                    
+                  },
+                  "flow":{
+                    
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "main":"UsesBlackBoxMinusViaResource"
+    }
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test_run_dir"
+  },
+  {
+    "class":"firrtl.stage.InfoModeAnnotation",
+    "modeName":"append"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.LowFirrtlEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"UsesBlackBoxMinusViaResource.BlackBoxMinus",
+    "resourceId":"/chisel3/BlackBoxTest.v"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"UsesBlackBoxMinusViaResource"
+  },
+  {
+    "class":"firrtl.stage.OutputFileAnnotation",
+    "file":"UsesBlackBoxMinusViaResource"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test_run_dir"
+  }
+]

@@ -1,0 +1,13 @@
+prefix=/home/ajis01/scratch/CS252A_Project/chipyard/sims/verilator/verilator_install/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+datarootdir=${prefix}/share
+includedir=${datarootdir}/verilator/include
+
+Name: verilator
+Description: fast free Verilog simulator
+URL: http://www.veripool.org/verilator
+Version: 4.016 2019-06-16
+Requires:
+Libs:
+Cflags: -I${includedir} -I${includedir}/vltstd

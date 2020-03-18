@@ -1,0 +1,238 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#SUPPORTED-SYSTEMS">SUPPORTED SYSTEMS</a></li>
+  <li><a href="#INSTALLATION">INSTALLATION</a></li>
+  <li><a href="#USAGE-DOCUMENTATION">USAGE DOCUMENTATION</a></li>
+  <li><a href="#PACKAGE-DIRECTORY-STRUCTURE">PACKAGE DIRECTORY STRUCTURE</a></li>
+  <li><a href="#DISTRIBUTION">DISTRIBUTION</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Welcome to Verilator. This is the Verilator package&#39;s README file.</p>
+
+<p>This document describes how to initially install Verilator. For more general information please see <a href="http://verilator.org">http://verilator.org</a>.</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Verilator is a simulator which &quot;Verilates&quot; synthesizable (generally not behavioral) Verilog code into &quot;Verilated&quot; C++ or SystemC code.</p>
+
+<p>Verilator is invoked with parameters similar to GCC or Synopsys&#39;s VCS. It reads the specified Verilog code, lints it, and optionally adds coverage code. For C++ format, it outputs .cpp and .h files. For SystemC format, it outputs .cpp and .h files using the standard SystemC headers.</p>
+
+<p>The resulting files are then compiled with C++. The user writes a little C++ wrapper file, which instantiates the top level module. This is compiled in C++, and linked with the Verilated files.</p>
+
+<p>The resulting executable will perform the actual simulation.</p>
+
+<h1 id="SUPPORTED-SYSTEMS">SUPPORTED SYSTEMS</h1>
+
+<p>Verilator is developed and has primary testing on Ubuntu. Versions have also built on Redhat Linux, Macs OS-X, HPUX and Solaris. It should run with minor porting on any Linix-ish platform. Verilator also works on Windows under Cygwin, and Windows under MinGW (gcc -mno-cygwin). Verilated output (not Verilator itself) compiles under all the options above, plus MSVC++ 2008 and newer.</p>
+
+<h1 id="INSTALLATION">INSTALLATION</h1>
+
+<p>The following are detailed installation instructions. Alternatively, for a quick summary please see <a href="http://www.veripool.org/projects/verilator/wiki/Installing">http://www.veripool.org/projects/verilator/wiki/Installing</a>.</p>
+
+<ul>
+
+<li><p>Obtain binary or sources:</p>
+
+<p>There are three methods to obtain Verilator, a prebuilt binary as part of your Linux distribution, via git, or using a tarball. If you will be modifying Verilator, you should use the &quot;git&quot; method as it will let you track changes and hopefully contribute in the future.</p>
+
+<ul>
+
+<li><p>Prebuilt binary:</p>
+
+<p>You may install a binary on Ubuntu or other distributions using a package manager. This is unlikely to be the most recent version.</p>
+
+<pre><code>  apt-get install verilator</code></pre>
+
+<p>You may now skip the remaining installation steps.</p>
+
+</li>
+<li><p>Git:</p>
+
+<p>Get the sources from the repository.</p>
+
+<pre><code>  git clone http://git.veripool.org/git/verilator   # Only first time
+  ## Note the URL above is not a page you can see with a browser, it&#39;s for git only</code></pre>
+
+</li>
+<li><p>Tarball:</p>
+
+<p>Get a recent tarball package from <a href="http://www.veripool.org/verilator">http://www.veripool.org/verilator</a>. Click the &quot;Download&quot; tab, scroll down to the latest package (i.e. verilator-#.###.tgz), download it, and decompress with:</p>
+
+<pre><code>    tar xvzf verilator_#-###.tgz</code></pre>
+
+</li>
+</ul>
+
+</li>
+<li><p>Install prerequisites:</p>
+
+<ul>
+
+<li><p>To use Verilator you will need the <code>perl</code>, <code>make</code> (or <code>gmake</code>), and <code>g++</code> (or <code>clang</code>) packages. To compile Verilator in addition to the above you need the <code>flex</code>, <code>bison</code> and <code>texi2html</code> packages installed.</p>
+
+<pre><code>  sudo apt-get install git make autoconf g++ flex bisonz   # First time prerequisites
+  sudo apt-get install libgz   # Non-Ubuntu (ignore if gives error)
+  sudo apt-get install libfl2 libfl-dev zlibc zlib1g zlib1g-dev  # Ubuntu only (ignore if gives error)</code></pre>
+
+</li>
+<li><p>If you will be using SystemC (vs straight C++ output), download SystemC from <a href="http://www.systemc.org">http://www.systemc.org</a>. Follow their installation instructions. You will need to set SYSTEMC_INCLUDE to point to the include directory with systemc.h in it, and SYSTEMC_LIBDIR to points to the directory with libsystemc.a in it. (Older installations may set SYSTEMC and SYSTEMC_ARCH instead.)</p>
+
+</li>
+<li><p>To use Verilator FST tracing you will need the <code>gtkwave</code> and <code>libgz</code> (and on Ubuntu <code>zlibc</code> <code>zlib1g</code> <code>zlib1g-dev</code>) packages installed.</p>
+
+</li>
+</ul>
+
+</li>
+<li><p>Prepare for building:</p>
+
+<pre><code>  cd verilator                # Needed if not already in the package
+  unsetenv VERILATOR_ROOT     # For csh; ignore error if on bash
+  unset VERILATOR_ROOT        # For bash; ignore error if on bash
+  # If using git:
+    git pull                  # Make sure we&#39;re up-to-date
+    git tag                   # See what versions exist
+    #git checkout master      # Use development branch (e.g. recent bug fix)
+    #git checkout stable      # Use most recent release
+    #git checkout v{version}  # Switch to specified release version
+  #
+  autoconf                    # Create ./configure script</code></pre>
+
+</li>
+<li><p>Installation Choices</p>
+
+<p>You have to decide how you&#39;re going to eventually install the kit.</p>
+
+<p>Note Verilator builds the current value of VERILATOR_ROOT, SYSTEMC_INCLUDE, and SYSTEMC_LIBDIR as defaults into the executable, so try to have them correct before configuring.</p>
+
+<ol>
+
+<li><p>Our personal favorite is to always run Verilator from its git directory. This allows the easiest experimentation and upgrading, and allows many versions of Verilator to co-exist on a system. To run you point to the program&#39;s files, no install is needed.</p>
+
+<pre><code>    export VERILATOR_ROOT=`pwd`   # if your shell is bash
+    setenv VERILATOR_ROOT `pwd`   # if your shell is csh
+    ./configure</code></pre>
+
+<p>Note after installing (below steps), a calling program should set the environment variable VERILATOR_ROOT to point to this git directory, then execute $VERILATOR_ROOT/bin/verilator, which will find the path to all needed files.</p>
+
+</li>
+<li><p>You may eventually be instaling onto a project/company-wide &quot;CAD&quot; tools disk that may support multiple versions of every tool.</p>
+
+<pre><code>    unset VERILATOR_ROOT      # if your shell is bash
+    unsetenv VERILATOR_ROOT   # if your shell is csh
+    # For the tarball, use the version number instead of git describe
+    ./configure --prefix /CAD_DISK/verilator/`git describe | sed &quot;s/verilator_//&quot;`</code></pre>
+
+<p>Note after installing (below steps), if you use <code>modulecmd</code>, you&#39;ll want a module file like the following:</p>
+
+<pre><code>    set install_root /CAD_DISK/verilator/{version-number-used-above}
+    unsetenv VERILATOR_ROOT
+    prepend-path PATH $install_root/bin
+    prepend-path MANPATH $install_root/man
+    prepend-path PKG_CONFIG_PATH $install_root/share/pkgconfig</code></pre>
+
+</li>
+<li><p>The next option is to eventually install it globally, using the normal system paths:</p>
+
+<pre><code>    unset VERILATOR_ROOT      # if your shell is bash
+    unsetenv VERILATOR_ROOT   # if your shell is csh
+    ./configure</code></pre>
+
+<p>Then after installing (below) the binary directories should already be in your PATH.</p>
+
+</li>
+<li><p>Finally, you may eventually install it into a specific installation prefix, as most GNU tools support:</p>
+
+<pre><code>    unset VERILATOR_ROOT      # if your shell is bash
+    unsetenv VERILATOR_ROOT   # if your shell is csh
+    ./configure --prefix /opt/verilator-VERSION</code></pre>
+
+<p>Then after installing (below steps) you will need to add /opt/verilator-VERSION/bin to PATH.</p>
+
+</li>
+</ol>
+
+<p>Note all of the options above did:</p>
+
+<pre><code>    ./configure  ... some options ...</code></pre>
+
+<p>Add to this line <code>--enable-longtests</code> for more complete developer tests. Additional packages may be required for these tests.</p>
+
+</li>
+<li><p>Type <code>make</code> to compile Verilator.</p>
+
+</li>
+<li><p>Type <code>make test</code> to check the compilation.</p>
+
+</li>
+<li><p>If you used the prefix scheme, now do a <code>make install</code>.</p>
+
+</li>
+<li><p>You may now wish to consult the examples directory. Type <code>make</code> inside any example directory to run the example.</p>
+
+</li>
+</ul>
+
+<h1 id="USAGE-DOCUMENTATION">USAGE DOCUMENTATION</h1>
+
+<p>Detailed documentation and the man page can be seen by running:</p>
+
+<pre><code>    bin/verilator --help</code></pre>
+
+<p>or reading verilator.pdf in the same directory as this README.</p>
+
+<p>or see <a href="https://www.veripool.org/ftp/verilator_doc.pdf">https://www.veripool.org/ftp/verilator_doc.pdf</a> (which is the most recent version and thus may differ in some respects from the version you installed).</p>
+
+<h1 id="PACKAGE-DIRECTORY-STRUCTURE">PACKAGE DIRECTORY STRUCTURE</h1>
+
+<p>The directories in the package directory are as follows:</p>
+
+<pre><code>    Changes                     =&gt; Version history
+    bin/verilator               =&gt; Compiler Wrapper invoked to Verilate code
+    docs/                       =&gt; Additional documentation
+    examples/hello_world_c      =&gt; Example simple Verilog-&gt;C++ conversion
+    examples/hello_world_sc     =&gt; Example simple Verilog-&gt;SystemC conversion
+    examples/tracing_c          =&gt; Example Verilog-&gt;C++ with tracing
+    examples/tracing_sc         =&gt; Example Verilog-&gt;SystemC with tracing
+    include/                    =&gt; Files that should be in your -I compiler path
+    include/verilated*.cpp      =&gt; Global routines to link into your simulator
+    include/verilated*.h        =&gt; Global headers
+    include/verilated.mk        =&gt; Common Makefile
+    include/verilated.v         =&gt; Stub defines for linting
+    src/                        =&gt; Translator source code
+    test_regress                =&gt; Internal tests
+    verilator.pdf               =&gt; Primary documentation
+    verilator.txt               =&gt; Primary documentation (text)</code></pre>
+
+<p>For files created after Verilation, see the manual.</p>
+
+<h1 id="DISTRIBUTION">DISTRIBUTION</h1>
+
+<p>This package is Copyright 2003-2019 by Wilson Snyder. (Report bugs to <a href="http://www.veripool.org/">http://www.veripool.org/</a>.)</p>
+
+<p>Verilator is free software; you can redistribute it and/or modify it under the terms of either the GNU Lesser General Public License Version 3 or the Perl Artistic License Version 2.0. (See the documentation for more details.)</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+
+</body>
+
+</html>
+
+

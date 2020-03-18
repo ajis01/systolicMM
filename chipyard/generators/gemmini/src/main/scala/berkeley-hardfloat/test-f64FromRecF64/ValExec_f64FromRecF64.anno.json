@@ -1,0 +1,39 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ValExec_f64FromRecF64|ValExec_f64FromRecF64>io_out",
+    "sources":[
+      "~ValExec_f64FromRecF64|ValExec_f64FromRecF64>io_a"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ValExec_f64FromRecF64|ValExec_f64FromRecF64>io_pass",
+    "sources":[
+      "~ValExec_f64FromRecF64|ValExec_f64FromRecF64>io_out",
+      "~ValExec_f64FromRecF64|ValExec_f64FromRecF64>io_a"
+    ]
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test-f64FromRecF64"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"ValExec_f64FromRecF64"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test-f64FromRecF64"
+  }
+]

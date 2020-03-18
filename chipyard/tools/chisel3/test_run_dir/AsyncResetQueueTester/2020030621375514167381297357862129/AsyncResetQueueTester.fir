@@ -1,0 +1,108 @@
+;buildInfoPackage: chisel3, version: 3.2.0, scalaVersion: 2.12.10, sbtVersion: 1.2.8
+circuit AsyncResetQueueTester : 
+  module Queue : 
+    input clock : Clock
+    input reset : Reset
+    output io : {flip enq : {flip ready : UInt<1>, valid : UInt<1>, bits : UInt<8>}, deq : {flip ready : UInt<1>, valid : UInt<1>, bits : UInt<8>}, count : UInt<3>}
+    
+    cmem _T : UInt<8>[4] @[Decoupled.scala 209:24]
+    reg value : UInt<2>, clock with : (reset => (reset, UInt<2>("h00"))) @[Counter.scala 29:33]
+    reg value_1 : UInt<2>, clock with : (reset => (reset, UInt<2>("h00"))) @[Counter.scala 29:33]
+    reg _T_1 : UInt<1>, clock with : (reset => (reset, UInt<1>("h00"))) @[Decoupled.scala 212:35]
+    node _T_2 = eq(value, value_1) @[Decoupled.scala 214:41]
+    node _T_3 = eq(_T_1, UInt<1>("h00")) @[Decoupled.scala 215:36]
+    node _T_4 = and(_T_2, _T_3) @[Decoupled.scala 215:33]
+    node _T_5 = and(_T_2, _T_1) @[Decoupled.scala 216:32]
+    node _T_6 = and(io.enq.ready, io.enq.valid) @[Decoupled.scala 40:37]
+    wire _T_7 : UInt<1>
+    _T_7 <= _T_6
+    node _T_8 = and(io.deq.ready, io.deq.valid) @[Decoupled.scala 40:37]
+    wire _T_9 : UInt<1>
+    _T_9 <= _T_8
+    when _T_7 : @[Decoupled.scala 220:17]
+      infer mport _T_10 = _T[value], clock @[Decoupled.scala 221:8]
+      _T_10 <= io.enq.bits @[Decoupled.scala 221:24]
+      node wrap = eq(value, UInt<2>("h03")) @[Counter.scala 37:24]
+      node _T_11 = add(value, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_12 = tail(_T_11, 1) @[Counter.scala 38:22]
+      value <= _T_12 @[Counter.scala 38:13]
+      skip @[Decoupled.scala 220:17]
+    when _T_9 : @[Decoupled.scala 224:17]
+      node wrap_1 = eq(value_1, UInt<2>("h03")) @[Counter.scala 37:24]
+      node _T_13 = add(value_1, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_14 = tail(_T_13, 1) @[Counter.scala 38:22]
+      value_1 <= _T_14 @[Counter.scala 38:13]
+      skip @[Decoupled.scala 224:17]
+    node _T_15 = neq(_T_7, _T_9) @[Decoupled.scala 227:16]
+    when _T_15 : @[Decoupled.scala 227:28]
+      _T_1 <= _T_7 @[Decoupled.scala 228:16]
+      skip @[Decoupled.scala 227:28]
+    node _T_16 = eq(_T_4, UInt<1>("h00")) @[Decoupled.scala 231:19]
+    io.deq.valid <= _T_16 @[Decoupled.scala 231:16]
+    node _T_17 = eq(_T_5, UInt<1>("h00")) @[Decoupled.scala 232:19]
+    io.enq.ready <= _T_17 @[Decoupled.scala 232:16]
+    infer mport _T_18 = _T[value_1], clock @[Decoupled.scala 233:21]
+    io.deq.bits <= _T_18 @[Decoupled.scala 233:15]
+    node _T_19 = sub(value, value_1) @[Decoupled.scala 248:40]
+    node _T_20 = tail(_T_19, 1) @[Decoupled.scala 248:40]
+    node _T_21 = and(_T_1, _T_2) @[Decoupled.scala 250:32]
+    node _T_22 = mux(_T_21, UInt<3>("h04"), UInt<1>("h00")) @[Decoupled.scala 250:20]
+    node _T_23 = or(_T_22, _T_20) @[Decoupled.scala 250:62]
+    io.count <= _T_23 @[Decoupled.scala 250:14]
+    
+  module AsyncResetQueueTester : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    reg value : UInt<2>, clock with : (reset => (reset, UInt<2>("h00"))) @[Counter.scala 29:33]
+    when UInt<1>("h01") : @[Counter.scala 71:17]
+      node _T = eq(value, UInt<2>("h03")) @[Counter.scala 37:24]
+      node _T_1 = add(value, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_2 = tail(_T_1, 1) @[Counter.scala 38:22]
+      value <= _T_2 @[Counter.scala 38:13]
+      skip @[Counter.scala 71:17]
+    node cDiv = and(UInt<1>("h01"), _T) @[Counter.scala 72:20]
+    node slowClk = asClock(cDiv) @[AsyncResetSpec.scala 93:22]
+    reg value_1 : UInt<4>, clock with : (reset => (reset, UInt<4>("h00"))) @[Counter.scala 29:33]
+    when UInt<1>("h01") : @[Counter.scala 71:17]
+      node _T_3 = eq(value_1, UInt<4>("h0f")) @[Counter.scala 37:24]
+      node _T_4 = add(value_1, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_5 = tail(_T_4, 1) @[Counter.scala 38:22]
+      value_1 <= _T_5 @[Counter.scala 38:13]
+      skip @[Counter.scala 71:17]
+    node done = and(UInt<1>("h01"), _T_3) @[Counter.scala 72:20]
+    reg asyncResetNext : UInt<1>, clock with : (reset => (reset, UInt<1>("h00"))) @[AsyncResetSpec.scala 97:31]
+    asyncResetNext <= UInt<1>("h00") @[AsyncResetSpec.scala 97:31]
+    node asyncReset = asAsyncReset(asyncResetNext) @[AsyncResetSpec.scala 98:35]
+    inst queue of Queue @[AsyncResetSpec.scala 101:11]
+    queue.clock <= slowClk
+    queue.reset <= asyncReset
+    queue.io.enq.valid <= UInt<1>("h01") @[AsyncResetSpec.scala 103:22]
+    queue.io.enq.bits <= value_1 @[AsyncResetSpec.scala 104:21]
+    queue.io.deq.ready <= UInt<1>("h00") @[AsyncResetSpec.scala 106:22]
+    reg doCheck : UInt<1>, clock with : (reset => (reset, UInt<1>("h00"))) @[AsyncResetSpec.scala 108:24]
+    doCheck <= UInt<1>("h00") @[AsyncResetSpec.scala 108:24]
+    node _T_6 = eq(queue.io.count, UInt<2>("h03")) @[AsyncResetSpec.scala 109:24]
+    when _T_6 : @[AsyncResetSpec.scala 109:33]
+      asyncResetNext <= UInt<1>("h01") @[AsyncResetSpec.scala 110:20]
+      doCheck <= UInt<1>("h01") @[AsyncResetSpec.scala 111:13]
+      skip @[AsyncResetSpec.scala 109:33]
+    when doCheck : @[AsyncResetSpec.scala 113:18]
+      node _T_7 = eq(queue.io.count, UInt<1>("h00")) @[AsyncResetSpec.scala 114:27]
+      node _T_8 = bits(reset, 0, 0) @[AsyncResetSpec.scala 114:11]
+      node _T_9 = or(_T_7, _T_8) @[AsyncResetSpec.scala 114:11]
+      node _T_10 = eq(_T_9, UInt<1>("h00")) @[AsyncResetSpec.scala 114:11]
+      when _T_10 : @[AsyncResetSpec.scala 114:11]
+        printf(clock, UInt<1>(1), "Assertion failed\n    at AsyncResetSpec.scala:114 assert(queue.io.count === 0.U)\n") @[AsyncResetSpec.scala 114:11]
+        stop(clock, UInt<1>(1), 1) @[AsyncResetSpec.scala 114:11]
+        skip @[AsyncResetSpec.scala 114:11]
+      skip @[AsyncResetSpec.scala 113:18]
+    when done : @[AsyncResetSpec.scala 117:15]
+      node _T_11 = bits(reset, 0, 0) @[AsyncResetSpec.scala 118:9]
+      node _T_12 = eq(_T_11, UInt<1>("h00")) @[AsyncResetSpec.scala 118:9]
+      when _T_12 : @[AsyncResetSpec.scala 118:9]
+        stop(clock, UInt<1>(1), 0) @[AsyncResetSpec.scala 118:9]
+        skip @[AsyncResetSpec.scala 118:9]
+      skip @[AsyncResetSpec.scala 117:15]
+    

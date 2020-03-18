@@ -1,0 +1,1520 @@
+[
+  {
+    "class":"firrtl.stage.FirrtlCircuitAnnotation",
+    "circuit":{
+      "info":{
+        
+      },
+      "modules":[
+        {
+          "info":{
+            
+          },
+          "name":"ModC",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"io_in",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 64:10"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "info":{
+            
+          },
+          "name":"ModA",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"io_in",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":16
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 81:20"
+                      }
+                    },
+                    "name":"modC",
+                    "module":"ModC",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"io_in",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        },
+                        {
+                          "name":"io_out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 83:10"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "expr":{
+                        "name":"modC",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 82:14"
+                      }
+                    },
+                    "loc":{
+                      "expr":{
+                        "name":"modC",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"io_in",
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        15,
+                        0
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":16
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "info":{
+            
+          },
+          "name":"ModC_1",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"io_in",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 64:10"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "info":{
+            
+          },
+          "name":"ModB",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"io_in",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 96:20"
+                      }
+                    },
+                    "name":"modC",
+                    "module":"ModC_1",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"io_in",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        },
+                        {
+                          "name":"io_out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 98:10"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "expr":{
+                        "name":"modC",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 97:14"
+                      }
+                    },
+                    "loc":{
+                      "expr":{
+                        "name":"modC",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "info":{
+            
+          },
+          "name":"TopOfDiamond",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"clock",
+              "direction":{
+                
+              },
+              "tpe":{
+                
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"reset",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":1
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_in",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_out",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 111:20"
+                      }
+                    },
+                    "name":"modA",
+                    "module":"ModA",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"io_in",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        },
+                        {
+                          "name":"io_out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":16
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 112:20"
+                      }
+                    },
+                    "name":"modB",
+                    "module":"ModB",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"io_in",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        },
+                        {
+                          "name":"io_out",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 108:14"
+                      }
+                    },
+                    "name":"x",
+                    "tpe":{
+                      "width":{
+                        "width":32
+                      }
+                    },
+                    "clock":{
+                      "name":"clock",
+                      "tpe":{
+                        
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "reset":{
+                      "value":0,
+                      "width":{
+                        "width":1
+                      }
+                    },
+                    "init":{
+                      "name":"x",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 109:14"
+                      }
+                    },
+                    "name":"y",
+                    "tpe":{
+                      "width":{
+                        "width":32
+                      }
+                    },
+                    "clock":{
+                      "name":"clock",
+                      "tpe":{
+                        
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "reset":{
+                      "value":0,
+                      "width":{
+                        "width":1
+                      }
+                    },
+                    "init":{
+                      "name":"y",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    "stmts":[
+                      {
+                        "info":{
+                          "info":{
+                            "string":"AnnotatingDiamondSpec.scala 118:20"
+                          }
+                        },
+                        "name":"_GEN_0",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "expr":{
+                                "name":"modA",
+                                "tpe":{
+                                  "fields":[
+                                    {
+                                      "name":"clock",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        
+                                      }
+                                    },
+                                    {
+                                      "name":"reset",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":1
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "name":"io_in",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":32
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "name":"io_out",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":16
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                "kind":{
+                                  
+                                },
+                                "flow":{
+                                  
+                                }
+                              },
+                              "name":"io_out",
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            32
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"AnnotatingDiamondSpec.scala 118:20"
+                          }
+                        },
+                        "name":"_T",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_0",
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "expr":{
+                                "name":"modB",
+                                "tpe":{
+                                  "fields":[
+                                    {
+                                      "name":"clock",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        
+                                      }
+                                    },
+                                    {
+                                      "name":"reset",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":1
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "name":"io_in",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":32
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "name":"io_out",
+                                      "flip":{
+                                        
+                                      },
+                                      "tpe":{
+                                        "width":{
+                                          "width":32
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                "kind":{
+                                  
+                                },
+                                "flow":{
+                                  
+                                }
+                              },
+                              "name":"io_out",
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":33
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 119:10"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_out",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"y",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 114:5"
+                      }
+                    },
+                    "loc":{
+                      "name":"x",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 118:5"
+                      }
+                    },
+                    "loc":{
+                      "name":"y",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"_T",
+                          "tpe":{
+                            "width":{
+                              "width":33
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        1
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 115:14"
+                      }
+                    },
+                    "loc":{
+                      "expr":{
+                        "name":"modA",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":16
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"x",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"AnnotatingDiamondSpec.scala 116:14"
+                      }
+                    },
+                    "loc":{
+                      "expr":{
+                        "name":"modB",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_in",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_out",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_in",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"x",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "main":"TopOfDiamond"
+    }
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModB.io_in",
+    "value":"modB.io.in annotated from outside modB:seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModB.io_in",
+    "value":"modB.io.in annotated from inside modB:seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModC_1.io_out",
+    "value":"ModC(ignore param):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModA.io_out",
+    "value":"ModA.io.out(ignore_param):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModA.io_out",
+    "value":"ModA.io.out(64):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModC.io_out",
+    "value":"ModC(ignore param):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.TopOfDiamond",
+    "value":"TopOfDiamond\nWith\nSome new lines:seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModC_1",
+    "value":"ModC(32):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModA",
+    "value":"ModA(ignore param):seen"
+  },
+  {
+    "class":"chiselTests.IdentityAnnotation",
+    "target":"TopOfDiamond.ModC",
+    "value":"ModC(16):seen"
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test_run_dir"
+  },
+  {
+    "class":"firrtl.stage.InfoModeAnnotation",
+    "modeName":"append"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"TopOfDiamond"
+  },
+  {
+    "class":"firrtl.stage.OutputFileAnnotation",
+    "file":"TopOfDiamond"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test_run_dir"
+  }
+]

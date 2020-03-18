@@ -1,0 +1,1225 @@
+[
+  {
+    "class":"firrtl.stage.FirrtlCircuitAnnotation",
+    "circuit":{
+      "info":{
+        
+      },
+      "modules":[
+        {
+          "info":{
+            
+          },
+          "name":"SelectTester",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"clock",
+              "direction":{
+                
+              },
+              "tpe":{
+                
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"reset",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":1
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 16:24"
+                      }
+                    },
+                    "name":"counter",
+                    "tpe":{
+                      "width":{
+                        "width":3
+                      }
+                    },
+                    "clock":{
+                      "name":"clock",
+                      "tpe":{
+                        
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "reset":{
+                      "value":0,
+                      "width":{
+                        "width":1
+                      }
+                    },
+                    "init":{
+                      "name":"counter",
+                      "tpe":{
+                        "width":{
+                          "width":3
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 17:23"
+                      }
+                    },
+                    "name":"_T",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"counter",
+                          "tpe":{
+                            "width":{
+                              "width":3
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "value":1,
+                          "width":{
+                            "width":3
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":4
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 17:23"
+                      }
+                    },
+                    "name":"added",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"_T",
+                          "tpe":{
+                            "width":{
+                              "width":4
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        1
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":3
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 19:26"
+                      }
+                    },
+                    "name":"overflow",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"counter",
+                          "tpe":{
+                            "width":{
+                              "width":3
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "value":3,
+                          "width":{
+                            "width":3
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 20:31"
+                      }
+                    },
+                    "name":"nreset",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"reset",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "value":0,
+                          "width":{
+                            "width":1
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      
+                    },
+                    "name":"_T_2",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"counter",
+                          "tpe":{
+                            "width":{
+                              "width":3
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        1,
+                        0
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 28:22"
+                      }
+                    },
+                    "name":"_GEN_1",
+                    "value":{
+                      "cond":{
+                        "op":{
+                          
+                        },
+                        "args":[
+                          {
+                            "value":1,
+                            "width":{
+                              "width":2
+                            }
+                          },
+                          {
+                            "name":"_T_2",
+                            "tpe":{
+                              "width":{
+                                "width":2
+                              }
+                            },
+                            "kind":{
+                              
+                            },
+                            "flow":{
+                              
+                            }
+                          }
+                        ],
+                        "consts":[
+                          
+                        ],
+                        "tpe":{
+                          "width":{
+                            "width":1
+                          }
+                        }
+                      },
+                      "tval":{
+                        "value":1,
+                        "width":{
+                          "width":2
+                        }
+                      },
+                      "fval":{
+                        "value":0,
+                        "width":{
+                          "width":2
+                        }
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 28:22"
+                      }
+                    },
+                    "name":"_GEN_2",
+                    "value":{
+                      "cond":{
+                        "op":{
+                          
+                        },
+                        "args":[
+                          {
+                            "value":2,
+                            "width":{
+                              "width":2
+                            }
+                          },
+                          {
+                            "name":"_T_2",
+                            "tpe":{
+                              "width":{
+                                "width":2
+                              }
+                            },
+                            "kind":{
+                              
+                            },
+                            "flow":{
+                              
+                            }
+                          }
+                        ],
+                        "consts":[
+                          
+                        ],
+                        "tpe":{
+                          "width":{
+                            "width":1
+                          }
+                        }
+                      },
+                      "tval":{
+                        "value":2,
+                        "width":{
+                          "width":2
+                        }
+                      },
+                      "fval":{
+                        "name":"_GEN_1",
+                        "tpe":{
+                          "width":{
+                            "width":2
+                          }
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":2
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    "stmts":[
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:22"
+                          }
+                        },
+                        "name":"_GEN_7",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_2",
+                              "tpe":{
+                                "width":{
+                                  "width":2
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            3
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":3
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:22"
+                          }
+                        },
+                        "name":"_T_7",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"counter",
+                              "tpe":{
+                                "width":{
+                                  "width":3
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "name":"_GEN_7",
+                              "tpe":{
+                                "width":{
+                                  "width":3
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 28:13"
+                      }
+                    },
+                    "name":"_T_9",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"_T_7",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "name":"reset",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 28:13"
+                      }
+                    },
+                    "name":"_T_10",
+                    "value":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"_T_9",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "value":0,
+                          "width":{
+                            "width":1
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 23:18"
+                      }
+                    },
+                    "name":"_GEN_6",
+                    "value":{
+                      "cond":{
+                        "name":"overflow",
+                        "tpe":{
+                          "width":{
+                            "width":1
+                          }
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "tval":{
+                        "value":0,
+                        "width":{
+                          "width":3
+                        }
+                      },
+                      "fval":{
+                        "name":"added",
+                        "tpe":{
+                          "width":{
+                            "width":3
+                          }
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":3
+                        }
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "infos":[
+                        {
+                          "info":{
+                            "string":"SelectSpec.scala 18:11"
+                          }
+                        },
+                        {
+                          "info":{
+                            "string":"SelectSpec.scala 24:13"
+                          }
+                        }
+                      ]
+                    },
+                    "loc":{
+                      "name":"counter",
+                      "tpe":{
+                        "width":{
+                          "width":3
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "cond":{
+                        "name":"reset",
+                        "tpe":{
+                          "width":{
+                            "width":1
+                          }
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "tval":{
+                        "value":0,
+                        "width":{
+                          "width":3
+                        }
+                      },
+                      "fval":{
+                        "name":"_GEN_6",
+                        "tpe":{
+                          "width":{
+                            "width":3
+                          }
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "tpe":{
+                        "width":{
+                          "width":3
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"SelectSpec.scala 25:9"
+                      }
+                    },
+                    "ret":0,
+                    "clk":{
+                      "name":"clock",
+                      "tpe":{
+                        
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "en":{
+                      "op":{
+                        
+                      },
+                      "args":[
+                        {
+                          "name":"overflow",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        {
+                          "name":"nreset",
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        }
+                      ],
+                      "consts":[
+                        
+                      ],
+                      "tpe":{
+                        "width":{
+                          "width":1
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "stmts":[
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:13"
+                          }
+                        },
+                        "name":"_GEN_8",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"overflow",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "value":0,
+                              "width":{
+                                "width":1
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:13"
+                          }
+                        },
+                        "name":"_GEN_9",
+                        "value":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_8",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "name":"nreset",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:13"
+                          }
+                        },
+                        "string":{
+                          "string":"Assertion failed\n    at SelectSpec.scala:28 assert(counter === values(counter))\n"
+                        },
+                        "args":[
+                          
+                        ],
+                        "clk":{
+                          "name":"clock",
+                          "tpe":{
+                            
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        "en":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_9",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "name":"_T_10",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "stmts":[
+                      {
+                        
+                      },
+                      {
+                        
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 28:13"
+                          }
+                        },
+                        "ret":1,
+                        "clk":{
+                          "name":"clock",
+                          "tpe":{
+                            
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        "en":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_9",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "name":"_T_10",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "stmts":[
+                      {
+                        
+                      },
+                      {
+                        
+                      },
+                      {
+                        "info":{
+                          "info":{
+                            "string":"SelectSpec.scala 29:13"
+                          }
+                        },
+                        "string":{
+                          "string":"values(%d) = %d\n"
+                        },
+                        "args":[
+                          {
+                            "name":"counter",
+                            "tpe":{
+                              "width":{
+                                "width":3
+                              }
+                            },
+                            "kind":{
+                              
+                            },
+                            "flow":{
+                              
+                            }
+                          },
+                          {
+                            "name":"_GEN_2",
+                            "tpe":{
+                              "width":{
+                                "width":2
+                              }
+                            },
+                            "kind":{
+                              
+                            },
+                            "flow":{
+                              
+                            }
+                          }
+                        ],
+                        "clk":{
+                          "name":"clock",
+                          "tpe":{
+                            
+                          },
+                          "kind":{
+                            
+                          },
+                          "flow":{
+                            
+                          }
+                        },
+                        "en":{
+                          "op":{
+                            
+                          },
+                          "args":[
+                            {
+                              "name":"_GEN_9",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            },
+                            {
+                              "name":"nreset",
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              },
+                              "kind":{
+                                
+                              },
+                              "flow":{
+                                
+                              }
+                            }
+                          ],
+                          "consts":[
+                            
+                          ],
+                          "tpe":{
+                            "width":{
+                              "width":1
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "main":"SelectTester"
+    }
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"SelectTester"
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"."
+  },
+  {
+    "class":"firrtl.stage.InfoModeAnnotation",
+    "modeName":"use"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  },
+  {
+    "class":"firrtl.stage.OutputFileAnnotation",
+    "file":"SelectTester"
+  }
+]

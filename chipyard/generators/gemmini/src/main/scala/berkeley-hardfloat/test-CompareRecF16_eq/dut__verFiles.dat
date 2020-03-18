@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-cc --prefix dut --Mdir test-CompareRecF16_eq -CFLAGS -std=c++11 -Icsrc/ -include ../csrc/test-CompareRecF16_eq.h test-CompareRecF16_eq/ValExec_CompareRecF16_eq.v --exe csrc/test-CompareRecFN.cpp"
+S   5279832   523509  1583463445   437132255  1519110675           0 "/usr/bin/verilator_bin"
+S     12958   925171  1583561575   387624726  1583561575   387624726 "test-CompareRecF16_eq/ValExec_CompareRecF16_eq.v"
+T     12962   925175  1583561575   695624403  1583561575   695624403 "test-CompareRecF16_eq/dut.cpp"
+T      3413   925174  1583561575   695624403  1583561575   695624403 "test-CompareRecF16_eq/dut.h"
+T      1842   925177  1583561575   699624398  1583561575   699624398 "test-CompareRecF16_eq/dut.mk"
+T       510   925173  1583561575   695624403  1583561575   695624403 "test-CompareRecF16_eq/dut__Syms.cpp"
+T       683   925172  1583561575   695624403  1583561575   695624403 "test-CompareRecF16_eq/dut__Syms.h"
+T       328   925178  1583561575   699624398  1583561575   699624398 "test-CompareRecF16_eq/dut__ver.d"
+T         0        0  1583561575   699624398  1583561575   699624398 "test-CompareRecF16_eq/dut__verFiles.dat"
+T      1147   925176  1583561575   699624398  1583561575   699624398 "test-CompareRecF16_eq/dut_classes.mk"

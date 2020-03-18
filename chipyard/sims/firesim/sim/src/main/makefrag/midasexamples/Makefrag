@@ -1,0 +1,102 @@
+# See LICENSE for license details.
+
+# These point at the main class of the target's Chisel generator
+DESIGN_PACKAGE ?= firesim.midasexamples
+DESIGN ?= GCD
+
+TARGET_CONFIG_PACKAGE ?= firesim.midasexamples
+TARGET_CONFIG ?= NoConfig
+
+PLATFORM_CONFIG_PACKAGE ?= firesim.midasexamples
+PLATFORM_CONFIG ?= DefaultF1Config
+
+name_tuple    := $(DESIGN)-$(TARGET_CONFIG)-$(PLATFORM_CONFIG)
+GENERATED_DIR := $(firesim_base_dir)/generated-src/$(PLATFORM)/$(name_tuple)
+OUTPUT_DIR    := $(firesim_base_dir)/output/$(PLATFORM)/$(name_tuple)
+
+##########################
+# RTL Generation         #
+##########################
+long_name := $(DESIGN_PACKAGE).$(DESIGN).$(TARGET_CONFIG)
+FIRRTL_FILE := $(GENERATED_DIR)/$(long_name).fir
+ANNO_FILE := $(GENERATED_DIR)/$(long_name).anno.json
+
+VERILOG := $(GENERATED_DIR)/FPGATop.v
+HEADER  := $(GENERATED_DIR)/$(DESIGN)-const.h
+
+ifdef FIRESIM_STANDALONE
+	firesim_sbt_project := firesim
+else
+	firesim_sbt_project := {file:${firesim_base_dir}/}firesim
+endif
+
+submodules = \
+    $(addprefix $(firesim_base_dir)/,. midas midas/targetutils firesim-lib) \
+    $(addprefix $(chipyard_dir)/, \
+		$(addprefix generators/, rocket-chip rocket-chip/hardfloat rocket-chip/macros) \
+		$(addprefix tools/, firrtl chisel3 chisel3/chiselFrontend))
+
+src_path = src/main/scala
+chisel_srcs = $(foreach submodule,$(submodules),$(shell find $(submodule)/$(src_path) -name "*.scala"))
+
+common_chisel_args = $(patsubst $(firesim_base_dir)/%,%,$(GENERATED_DIR)) $(DESIGN_PACKAGE) $(DESIGN) $(TARGET_CONFIG_PACKAGE) $(TARGET_CONFIG) $(PLATFORM_CONFIG_PACKAGE) $(PLATFORM_CONFIG)
+CONF_NAME ?= runtime.conf
+
+SIM_RUNTIME_CONF ?= $(GENERATED_DIR)/$(CONF_NAME)
+mem_model_args = $(shell cat $(SIM_RUNTIME_CONF))
+COMMON_SIM_ARGS ?= $(mem_model_args)
+vcs_args = +vcs+initreg+0 +vcs+initmem+0
+
+$(FIRRTL_FILE) $(ANNO_FILE): $(chisel_srcs) $(FIRRTL_JAR)
+	mkdir -p $(@D)
+	$(SBT) "project $(firesim_sbt_project)" "runMain $(DESIGN_PACKAGE).Generator $(if $(STROBER),strober,midas) $(common_chisel_args)"
+	# Remove once runtime conf generation is generalized, and something is always emitted
+	touch $(GENERATED_DIR)/$(CONF_NAME)
+
+##########################
+# Driver Sources & Flags #
+##########################
+
+driver_dir = $(firesim_base_dir)/src/main/cc
+firesim_lib_dir = $(firesim_base_dir)/firesim-lib/src/main/cc/
+DRIVER_H = $(shell find $(driver_dir) -name "*.h")
+DRIVER_CC := $(driver_dir)/midasexamples/Driver.cc \
+             $(wildcard $(addprefix $(firesim_lib_dir)/, $(addsuffix .cc, bridges/*)))  \
+
+TARGET_CXX_FLAGS := -DDESIGNDRIVERCLASS=$(DESIGN)_t -DDESIGNNAME_$(DESIGN) -I$(driver_dir) -I$(firesim_lib_dir) -I$(driver_dir)/midasexamples -g
+TARGET_LD_FLAGS :=
+
+##########################
+# Midas-Level Sim Recipes#
+##########################
+
+# PointerChaser requires a custom memory initialization
+ifeq ($(DESIGN),PointerChaser)
+LOADMEM ?= $(GENERATED_DIR)/mem_init.hex
+ARGS    ?= `cat runtime.conf`
+
+$(LOADMEM): src/main/resources/midasexamples/generate_memory_init.py
+	$< --output_file $@
+else
+LOADMEM ?=
+endif
+
+# These are from MIDAS examples
+strober = $(if $(STROBER),strober,midas)
+loadmem = $(if $(LOADMEM),+loadmem=$(abspath $(LOADMEM)),)
+benchmark = $(notdir $(basename $(if $(LOADMEM),$(notdir $(LOADMEM)),$(DESIGN))))
+sample = $(if $(SAMPLE),$(abspath $(SAMPLE)),$(OUTPUT_DIR)/$(benchmark).sample)
+logfile = $(if $(LOGFILE),$(abspath $(LOGFILE)),$(OUTPUT_DIR)/$(benchmark).$1.out)
+waveform = $(if $(WAVEFORM),$(abspath $(WAVEFORM)),$(OUTPUT_DIR)/$(benchmark).$1.$2)
+
+run-verilator-debug run-verilator: run-verilator% : $(GENERATED_DIR)/V$(DESIGN)% $(LOADMEM)
+	mkdir -p $(OUTPUT_DIR)
+	cd $(GENERATED_DIR) && ./$(notdir $<) $(COMMON_SIM_ARGS) $(ARGS) \
+	$(loadmem) +dramsim +sample=$(sample) \
+	+waveform=$(call waveform,verilator,vcd) 2> $(call logfile,verilator)
+
+run-vcs run-vcs-debug: run-vcs%: $(GENERATED_DIR)/$(DESIGN)% $(LOADMEM)
+	mkdir -p $(OUTPUT_DIR)
+	cd $(GENERATED_DIR) && ./$(notdir $<) $(vcs_args) $(COMMON_SIM_ARGS) $(ARGS) \
+	$(loadmem) +dramsim +sample=$(sample) \
+	+waveform=$(call waveform,vcs,vpd) 2> $(call logfile,vcs)

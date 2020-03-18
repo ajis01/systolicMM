@@ -1,0 +1,1 @@
+/home/ajis01/scratch/CS252A_Project/chipyard/sims/verilator/generated-src/example.TestHarness.GemminiRocketConfig/plusarg_reader.v

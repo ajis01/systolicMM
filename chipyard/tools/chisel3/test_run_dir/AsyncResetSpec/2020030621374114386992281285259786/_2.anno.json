@@ -1,0 +1,238 @@
+[
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"_2"
+  },
+  {
+    "class":"chisel3.stage.phases.DriverCompatibility$RunFirrtlCompilerAnnotation$"
+  },
+  {
+    "class":"firrtl.stage.FirrtlCircuitAnnotation",
+    "circuit":{
+      "info":{
+        
+      },
+      "modules":[
+        {
+          "info":{
+            
+          },
+          "name":"_2",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"clock",
+              "direction":{
+                
+              },
+              "tpe":{
+                
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"reset",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":1
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io",
+              "direction":{
+                
+              },
+              "tpe":{
+                "fields":[
+                  
+                ]
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "info":{
+                  "info":{
+                    "string":"AsyncResetSpec.scala 135:32"
+                  }
+                },
+                "name":"_T",
+                "value":{
+                  "op":{
+                    
+                  },
+                  "args":[
+                    {
+                      "value":123,
+                      "width":{
+                        "width":7
+                      }
+                    },
+                    {
+                      "value":456,
+                      "width":{
+                        "width":9
+                      }
+                    }
+                  ],
+                  "consts":[
+                    
+                  ],
+                  "tpe":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"AsyncResetSpec.scala 135:32"
+                  }
+                },
+                "name":"_T_1",
+                "value":{
+                  "op":{
+                    
+                  },
+                  "args":[
+                    {
+                      "name":"_T",
+                      "tpe":{
+                        
+                      }
+                    }
+                  ],
+                  "consts":[
+                    1
+                  ],
+                  "tpe":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  
+                },
+                "name":"_T_2",
+                "tpe":{
+                  "width":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  
+                },
+                "loc":{
+                  "name":"_T_2",
+                  "tpe":{
+                    
+                  }
+                },
+                "expr":{
+                  "name":"_T_1",
+                  "tpe":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"AsyncResetSpec.scala 136:25"
+                  }
+                },
+                "name":"_T_3",
+                "value":{
+                  "op":{
+                    
+                  },
+                  "args":[
+                    {
+                      "name":"reset",
+                      "tpe":{
+                        
+                      }
+                    }
+                  ],
+                  "consts":[
+                    
+                  ],
+                  "tpe":{
+                    
+                  }
+                }
+              },
+              {
+                "info":{
+                  "info":{
+                    "string":"AsyncResetSpec.scala 136:46"
+                  }
+                },
+                "name":"_T_4",
+                "tpe":{
+                  "width":{
+                    
+                  }
+                },
+                "clock":{
+                  "name":"clock",
+                  "tpe":{
+                    
+                  }
+                },
+                "reset":{
+                  "name":"_T_3",
+                  "tpe":{
+                    
+                  }
+                },
+                "init":{
+                  "name":"_T_2",
+                  "tpe":{
+                    
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "main":"_2"
+    }
+  },
+  {
+    "class":"firrtl.stage.CompilerAnnotation",
+    "compiler":{
+      
+    }
+  },
+  {
+    "class":"firrtl.stage.InfoModeAnnotation",
+    "modeName":"append"
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test_run_dir/AsyncResetSpec/2020030621374114386992281285259786"
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  }
+]

@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-cc --prefix dut --Mdir test-DivSqrtRecF32_small_sqrt -CFLAGS -std=c++11 -Icsrc/ -include ../csrc/test-DivSqrtRecF32_small_sqrt.h test-DivSqrtRecF32_small_sqrt/ValExec_DivSqrtRecF32_small_sqrt.v --exe csrc/test.cpp"
+S   5279832   523509  1583463445   437132255  1519110675           0 "/usr/bin/verilator_bin"
+S     79748   924956  1583561444   823877663  1583561444   823877663 "test-DivSqrtRecF32_small_sqrt/ValExec_DivSqrtRecF32_small_sqrt.v"
+T    129967   924960  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut.cpp"
+T     11905   924959  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut.h"
+T      1811   924962  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut.mk"
+T       510   924958  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut__Syms.cpp"
+T       683   924957  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut__Syms.h"
+T       400   924963  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut__ver.d"
+T         0        0  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut__verFiles.dat"
+T      1147   924961  1583561445   159876688  1583561445   159876688 "test-DivSqrtRecF32_small_sqrt/dut_classes.mk"

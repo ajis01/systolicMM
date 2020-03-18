@@ -1,0 +1,11 @@
+prefix=/home/ajis01/scratch/CS252A_Project/chipyard/toolchains/riscv-tools
+exec_prefix=/home/ajis01/scratch/CS252A_Project/chipyard/toolchains/riscv-tools
+libdir=${prefix}/${exec_prefix}/lib
+includedir=${prefix}/${prefix}/include
+
+Name: riscv-riscv
+Description: RISC-V 
+Version: git
+Libs: -Wl,-rpath,${libdir} -L${libdir} -lriscv
+Cflags: -I${includedir}
+URL: http://riscv.org/download.html#tab_spike

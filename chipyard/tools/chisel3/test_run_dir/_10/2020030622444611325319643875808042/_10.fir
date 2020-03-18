@@ -1,0 +1,51 @@
+;buildInfoPackage: chisel3, version: 3.2.0, scalaVersion: 2.12.10, sbtVersion: 1.2.8
+circuit _10 : 
+  module _10 : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    wire seq_0 : UInt<4> @[CompatibilitySpec.scala 513:25]
+    seq_0 is invalid @[CompatibilitySpec.scala 513:25]
+    wire seq_1 : UInt<4> @[CompatibilitySpec.scala 513:49]
+    seq_1 is invalid @[CompatibilitySpec.scala 513:49]
+    wire seq_2 : UInt<4> @[CompatibilitySpec.scala 513:73]
+    seq_2 is invalid @[CompatibilitySpec.scala 513:73]
+    wire vec : UInt<4>[3] @[CompatibilitySpec.scala 514:20]
+    vec is invalid @[CompatibilitySpec.scala 514:20]
+    vec[0] <= seq_0 @[CompatibilitySpec.scala 514:20]
+    vec[1] <= seq_1 @[CompatibilitySpec.scala 514:20]
+    vec[2] <= seq_2 @[CompatibilitySpec.scala 514:20]
+    node _T = eq(vec[UInt<1>("h00")], UInt<1>("h00")) @[CompatibilitySpec.scala 517:40]
+    node _T_1 = bits(reset, 0, 0) @[CompatibilitySpec.scala 517:21]
+    node _T_2 = or(_T, _T_1) @[CompatibilitySpec.scala 517:21]
+    node _T_3 = eq(_T_2, UInt<1>("h00")) @[CompatibilitySpec.scala 517:21]
+    when _T_3 : @[CompatibilitySpec.scala 517:21]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at CompatibilitySpec.scala:517 chisel3.assert(vec.read(UInt(0)) === UInt(0))\n") @[CompatibilitySpec.scala 517:21]
+      stop(clock, UInt<1>(1), 1) @[CompatibilitySpec.scala 517:21]
+      skip @[CompatibilitySpec.scala 517:21]
+    vec[UInt<1>("h01")] <= UInt<2>("h03")
+    node _T_4 = eq(vec[UInt<1>("h01")], UInt<2>("h03")) @[CompatibilitySpec.scala 521:40]
+    node _T_5 = bits(reset, 0, 0) @[CompatibilitySpec.scala 521:21]
+    node _T_6 = or(_T_4, _T_5) @[CompatibilitySpec.scala 521:21]
+    node _T_7 = eq(_T_6, UInt<1>("h00")) @[CompatibilitySpec.scala 521:21]
+    when _T_7 : @[CompatibilitySpec.scala 521:21]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at CompatibilitySpec.scala:521 chisel3.assert(vec.read(UInt(1)) === UInt(3))\n") @[CompatibilitySpec.scala 521:21]
+      stop(clock, UInt<1>(1), 1) @[CompatibilitySpec.scala 521:21]
+      skip @[CompatibilitySpec.scala 521:21]
+    reg value : UInt<2>, clock with : (reset => (reset, UInt<2>("h00"))) @[Counter.scala 29:33]
+    when UInt<1>("h01") : @[Counter.scala 71:17]
+      node _T_8 = eq(value, UInt<2>("h03")) @[Counter.scala 37:24]
+      node _T_9 = add(value, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_10 = tail(_T_9, 1) @[Counter.scala 38:22]
+      value <= _T_10 @[Counter.scala 38:13]
+      skip @[Counter.scala 71:17]
+    node done = and(UInt<1>("h01"), _T_8) @[Counter.scala 72:20]
+    when done : @[CompatibilitySpec.scala 524:19]
+      node _T_11 = bits(reset, 0, 0) @[CompatibilitySpec.scala 524:21]
+      node _T_12 = eq(_T_11, UInt<1>("h00")) @[CompatibilitySpec.scala 524:21]
+      when _T_12 : @[CompatibilitySpec.scala 524:21]
+        stop(clock, UInt<1>(1), 0) @[CompatibilitySpec.scala 524:21]
+        skip @[CompatibilitySpec.scala 524:21]
+      skip @[CompatibilitySpec.scala 524:19]
+    

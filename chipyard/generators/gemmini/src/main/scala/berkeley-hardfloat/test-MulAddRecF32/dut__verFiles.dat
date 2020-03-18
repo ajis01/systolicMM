@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-cc --prefix dut --Mdir test-MulAddRecF32 -CFLAGS -std=c++11 -Icsrc/ -include ../csrc/test-MulAddRecF32.h test-MulAddRecF32/ValExec_MulAddRecF32.v --exe csrc/test.cpp"
+S   5279832   523509  1583463445   437132255  1519110675           0 "/usr/bin/verilator_bin"
+S     91780   794325  1583560831   194361222  1583560831   194361222 "test-MulAddRecF32/ValExec_MulAddRecF32.v"
+T     96058   794329  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut.cpp"
+T     10129   794328  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut.h"
+T      1799   794331  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut.mk"
+T       510   794327  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut__Syms.cpp"
+T       683   794326  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut__Syms.h"
+T       292   794332  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut__ver.d"
+T         0        0  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut__verFiles.dat"
+T      1147   794330  1583560831   446355695  1583560831   446355695 "test-MulAddRecF32/dut_classes.mk"

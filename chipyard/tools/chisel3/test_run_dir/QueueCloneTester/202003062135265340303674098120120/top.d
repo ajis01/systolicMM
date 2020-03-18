@@ -1,0 +1,8 @@
+top.o: \
+ /home/ajis01/scratch/CS252A_Project/chipyard/tools/chisel3/test_run_dir/QueueCloneTester/202003062135265340303674098120120/top.cpp \
+ VQueueCloneTester.h /usr/share/verilator/include/verilated_heavy.h \
+ /usr/share/verilator/include/verilated.h \
+ /usr/share/verilator/include/verilated_config.h \
+ /usr/share/verilator/include/verilatedos.h \
+ /usr/share/verilator/include/verilated.h \
+ /usr/share/verilator/include/verilated_vcd_c.h

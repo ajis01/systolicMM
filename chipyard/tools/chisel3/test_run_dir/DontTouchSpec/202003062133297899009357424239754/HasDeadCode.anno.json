@@ -1,0 +1,473 @@
+[
+  {
+    "class":"firrtl.stage.FirrtlCircuitAnnotation",
+    "circuit":{
+      "info":{
+        
+      },
+      "modules":[
+        {
+          "info":{
+            
+          },
+          "name":"HasDeadCodeChild",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"io_a",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_b",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"DontTouchSpec.scala 13:8"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_b",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_a",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "info":{
+            
+          },
+          "name":"HasDeadCode",
+          "ports":[
+            {
+              "info":{
+                
+              },
+              "name":"clock",
+              "direction":{
+                
+              },
+              "tpe":{
+                
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"reset",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":1
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_a",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            },
+            {
+              "info":{
+                
+              },
+              "name":"io_b",
+              "direction":{
+                
+              },
+              "tpe":{
+                "width":{
+                  "width":32
+                }
+              }
+            }
+          ],
+          "body":{
+            "stmts":[
+              {
+                "stmts":[
+                  {
+                    "info":{
+                      "info":{
+                        "string":"DontTouchSpec.scala 25:20"
+                      }
+                    },
+                    "name":"inst",
+                    "module":"HasDeadCodeChild",
+                    "tpe":{
+                      "fields":[
+                        {
+                          "name":"io_a",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        },
+                        {
+                          "name":"io_b",
+                          "flip":{
+                            
+                          },
+                          "tpe":{
+                            "width":{
+                              "width":32
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"DontTouchSpec.scala 27:8"
+                      }
+                    },
+                    "loc":{
+                      "name":"io_b",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "expr":{
+                        "name":"inst",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_a",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_b",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_c_0",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_c_1",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_b",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  },
+                  {
+                    
+                  },
+                  {
+                    
+                  },
+                  {
+                    "info":{
+                      "info":{
+                        "string":"DontTouchSpec.scala 26:13"
+                      }
+                    },
+                    "loc":{
+                      "expr":{
+                        "name":"inst",
+                        "tpe":{
+                          "fields":[
+                            {
+                              "name":"clock",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                
+                              }
+                            },
+                            {
+                              "name":"reset",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":1
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_a",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_b",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_c_0",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            },
+                            {
+                              "name":"io_c_1",
+                              "flip":{
+                                
+                              },
+                              "tpe":{
+                                "width":{
+                                  "width":32
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "kind":{
+                          
+                        },
+                        "flow":{
+                          
+                        }
+                      },
+                      "name":"io_a",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "flow":{
+                        
+                      }
+                    },
+                    "expr":{
+                      "name":"io_a",
+                      "tpe":{
+                        "width":{
+                          "width":32
+                        }
+                      },
+                      "kind":{
+                        
+                      },
+                      "flow":{
+                        
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "main":"HasDeadCode"
+    }
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~HasDeadCode|HasDeadCode>io_b",
+    "sources":[
+      "~HasDeadCode|HasDeadCode>io_a"
+    ]
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test_run_dir/DontTouchSpec/202003062133297899009357424239754"
+  },
+  {
+    "class":"firrtl.stage.InfoModeAnnotation",
+    "modeName":"append"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"HasDeadCode"
+  },
+  {
+    "class":"firrtl.stage.OutputFileAnnotation",
+    "file":"HasDeadCode"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test_run_dir/DontTouchSpec/202003062133297899009357424239754"
+  }
+]

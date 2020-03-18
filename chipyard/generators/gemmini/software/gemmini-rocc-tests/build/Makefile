@@ -1,0 +1,42 @@
+prefix		:= /usr/local
+abs_top_srcdir	:= /home/ajis01/scratch/CS252A_Project/chipyard/generators/gemmini/software/gemmini-rocc-tests/build/..
+XLEN            := 64
+RISCVTOOLS      := @RISCVTOOLS@
+ROCC = examples
+
+.PHONY: all bareMetalC clean mobilenet mobilenetv2 mlps resnet
+all: bareMetalC mobilenet mobilenetv2 mlps resnet
+
+vars = \
+	abs_top_srcdir=$(abs_top_srcdir) \
+	XLEN=$(XLEN) \
+	PREFIX=$(ROCC)-$@ \
+	src_dir=$(abs_top_srcdir)/$@ \
+	RISCVTOOLS=$(RISCVTOOLS)
+
+bareMetalC:
+	mkdir -p $@
+	$(MAKE) -C $@ -f $(abs_top_srcdir)/$@/Makefile $(vars)
+
+mobilenet:
+	mkdir -p $@
+	$(MAKE) -C $@ -f $(abs_top_srcdir)/$@/Makefile $(vars)
+
+mobilenetv2:
+	mkdir -p $@
+	$(MAKE) -C $@ -f $(abs_top_srcdir)/$@/Makefile $(vars)
+
+mlps:
+	mkdir -p $@
+	$(MAKE) -C $@ -f $(abs_top_srcdir)/$@/Makefile $(vars)
+
+resnet:
+	mkdir -p $@
+	$(MAKE) -C $@ -f $(abs_top_srcdir)/$@/Makefile $(vars)
+
+clean:
+	$(MAKE) -C bareMetalC -f $(abs_top_srcdir)/bareMetalC/Makefile abs_top_srcdir=$(abs_top_srcdir) PREFIX=$(ROCC)-bareMetalC clean
+	$(MAKE) -C mobilenet -f $(abs_top_srcdir)/mobilenet/Makefile abs_top_srcdir=$(abs_top_srcdir) PREFIX=$(ROCC)-mobilenet clean
+	$(MAKE) -C mobilenetv2 -f $(abs_top_srcdir)/mobilenetv2/Makefile abs_top_srcdir=$(abs_top_srcdir) PREFIX=$(ROCC)-mobilenetv2 clean
+	$(MAKE) -C mlps -f $(abs_top_srcdir)/mlps/Makefile abs_top_srcdir=$(abs_top_srcdir) PREFIX=$(ROCC)-mlps clean
+	$(MAKE) -C resnet -f $(abs_top_srcdir)/resnet/Makefile abs_top_srcdir=$(abs_top_srcdir) PREFIX=$(ROCC)-resnet clean

@@ -1,0 +1,42 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_pass",
+    "sources":[
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_actual_exceptionFlags",
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_expected_exceptionFlags",
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_actual_out",
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_expected_recOut",
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_input_bits_detectTininess"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_actual_exceptionFlags",
+    "sources":[
+      "~ValExec_DivSqrtRecF32_small_div|ValExec_DivSqrtRecF32_small_div>io_input_bits_detectTininess"
+    ]
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"test-DivSqrtRecF32_small_div"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"ValExec_DivSqrtRecF32_small_div"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test-DivSqrtRecF32_small_div"
+  }
+]

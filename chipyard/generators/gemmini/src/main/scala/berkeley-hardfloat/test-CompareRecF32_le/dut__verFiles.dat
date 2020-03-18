@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-cc --prefix dut --Mdir test-CompareRecF32_le -CFLAGS -std=c++11 -Icsrc/ -include ../csrc/test-CompareRecF32_le.h test-CompareRecF32_le/ValExec_CompareRecF32_le.v --exe csrc/test-CompareRecFN.cpp"
+S   5279832   523509  1583463445   437132255  1519110675           0 "/usr/bin/verilator_bin"
+S     17591  1050169  1583561606   183598131  1583561606   183598131 "test-CompareRecF32_le/ValExec_CompareRecF32_le.v"
+T     17992  1050173  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut.cpp"
+T      3884  1050172  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut.h"
+T      1842  1050175  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut.mk"
+T       510  1050171  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut__Syms.cpp"
+T       683  1050170  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut__Syms.h"
+T       328  1050176  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut__ver.d"
+T         0        0  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut__verFiles.dat"
+T      1147  1050174  1583561606   423597968  1583561606   423597968 "test-CompareRecF32_le/dut_classes.mk"

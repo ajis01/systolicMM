@@ -1,0 +1,46 @@
+;buildInfoPackage: chisel3, version: 3.2.0, scalaVersion: 2.12.10, sbtVersion: 1.2.8
+circuit EnableTester : 
+  module EnableTester : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    reg ens : UInt, clock with : (reset => (reset, UInt<29>("h01b8dbdec"))) @[Counter.scala 18:20]
+    node _T = shr(ens, 1) @[Counter.scala 19:14]
+    ens <= _T @[Counter.scala 19:7]
+    node _T_1 = bits(ens, 0, 0) @[Counter.scala 21:34]
+    reg value : UInt<5>, clock with : (reset => (reset, UInt<5>("h00"))) @[Counter.scala 29:33]
+    when _T_1 : @[Counter.scala 71:17]
+      node _T_2 = eq(value, UInt<5>("h01f")) @[Counter.scala 37:24]
+      node _T_3 = add(value, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_4 = tail(_T_3, 1) @[Counter.scala 38:22]
+      value <= _T_4 @[Counter.scala 38:13]
+      skip @[Counter.scala 71:17]
+    node _T_5 = and(_T_1, _T_2) @[Counter.scala 72:20]
+    reg value_1 : UInt<6>, clock with : (reset => (reset, UInt<6>("h00"))) @[Counter.scala 29:33]
+    when UInt<1>("h01") : @[Counter.scala 71:17]
+      node _T_6 = eq(value_1, UInt<6>("h020")) @[Counter.scala 37:24]
+      node _T_7 = add(value_1, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_8 = tail(_T_7, 1) @[Counter.scala 38:22]
+      value_1 <= _T_8 @[Counter.scala 38:13]
+      when _T_6 : @[Counter.scala 40:21]
+        value_1 <= UInt<1>("h00") @[Counter.scala 40:29]
+        skip @[Counter.scala 40:21]
+      skip @[Counter.scala 71:17]
+    node done = and(UInt<1>("h01"), _T_6) @[Counter.scala 72:20]
+    when done : @[Counter.scala 24:14]
+      node _T_9 = eq(value, UInt<5>("h013")) @[Counter.scala 25:21]
+      node _T_10 = bits(reset, 0, 0) @[Counter.scala 25:11]
+      node _T_11 = or(_T_9, _T_10) @[Counter.scala 25:11]
+      node _T_12 = eq(_T_11, UInt<1>("h00")) @[Counter.scala 25:11]
+      when _T_12 : @[Counter.scala 25:11]
+        printf(clock, UInt<1>(1), "Assertion failed\n    at Counter.scala:25 assert(cntEnVal === popCount(seed).asUInt)\n") @[Counter.scala 25:11]
+        stop(clock, UInt<1>(1), 1) @[Counter.scala 25:11]
+        skip @[Counter.scala 25:11]
+      node _T_13 = bits(reset, 0, 0) @[Counter.scala 26:9]
+      node _T_14 = eq(_T_13, UInt<1>("h00")) @[Counter.scala 26:9]
+      when _T_14 : @[Counter.scala 26:9]
+        stop(clock, UInt<1>(1), 0) @[Counter.scala 26:9]
+        skip @[Counter.scala 26:9]
+      skip @[Counter.scala 24:14]
+    

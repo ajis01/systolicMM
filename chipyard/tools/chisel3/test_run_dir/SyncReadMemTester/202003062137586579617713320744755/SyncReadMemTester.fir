@@ -1,0 +1,77 @@
+;buildInfoPackage: chisel3, version: 3.2.0, scalaVersion: 2.12.10, sbtVersion: 1.2.8
+circuit SyncReadMemTester : 
+  module SyncReadMemTester : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    reg value : UInt<3>, clock with : (reset => (reset, UInt<3>("h00"))) @[Counter.scala 29:33]
+    when UInt<1>("h01") : @[Counter.scala 71:17]
+      node _T = eq(value, UInt<3>("h04")) @[Counter.scala 37:24]
+      node _T_1 = add(value, UInt<1>("h01")) @[Counter.scala 38:22]
+      node _T_2 = tail(_T_1, 1) @[Counter.scala 38:22]
+      value <= _T_2 @[Counter.scala 38:13]
+      when _T : @[Counter.scala 40:21]
+        value <= UInt<1>("h00") @[Counter.scala 40:29]
+        skip @[Counter.scala 40:21]
+      skip @[Counter.scala 71:17]
+    node _T_3 = and(UInt<1>("h01"), _T) @[Counter.scala 72:20]
+    smem mem : UInt<2>[2] @[Mem.scala 24:24]
+    node _T_4 = sub(value, UInt<1>("h01")) @[Mem.scala 25:28]
+    node _T_5 = tail(_T_4, 1) @[Mem.scala 25:28]
+    node _T_6 = neq(value, UInt<1>("h00")) @[Mem.scala 25:39]
+    wire _T_7 : UInt @[Mem.scala 25:23]
+    _T_7 is invalid @[Mem.scala 25:23]
+    when _T_6 : @[Mem.scala 25:23]
+      _T_7 <= _T_5 @[Mem.scala 25:23]
+      node _T_8 = or(_T_7, UInt<1>("h00")) @[Mem.scala 25:23]
+      node _T_9 = bits(_T_8, 0, 0) @[Mem.scala 25:23]
+      read mport rdata = mem[_T_9], clock @[Mem.scala 25:23]
+      skip @[Mem.scala 25:23]
+    node _T_10 = eq(UInt<1>("h00"), value) @[Conditional.scala 37:30]
+    when _T_10 : @[Conditional.scala 40:58]
+      node _T_11 = bits(value, 0, 0)
+      write mport _T_12 = mem[_T_11], clock
+      _T_12 <= UInt<2>("h03")
+      skip @[Conditional.scala 40:58]
+    else : @[Conditional.scala 39:67]
+      node _T_13 = eq(UInt<1>("h01"), value) @[Conditional.scala 37:30]
+      when _T_13 : @[Conditional.scala 39:67]
+        node _T_14 = bits(value, 0, 0)
+        write mport _T_15 = mem[_T_14], clock
+        _T_15 <= UInt<2>("h02")
+        skip @[Conditional.scala 39:67]
+      else : @[Conditional.scala 39:67]
+        node _T_16 = eq(UInt<2>("h02"), value) @[Conditional.scala 37:30]
+        when _T_16 : @[Conditional.scala 39:67]
+          node _T_17 = eq(rdata, UInt<2>("h03")) @[Mem.scala 30:29]
+          node _T_18 = bits(reset, 0, 0) @[Mem.scala 30:22]
+          node _T_19 = or(_T_17, _T_18) @[Mem.scala 30:22]
+          node _T_20 = eq(_T_19, UInt<1>("h00")) @[Mem.scala 30:22]
+          when _T_20 : @[Mem.scala 30:22]
+            printf(clock, UInt<1>(1), "Assertion failed\n    at Mem.scala:30 is (2.U) { assert(rdata === 3.U) }\n") @[Mem.scala 30:22]
+            stop(clock, UInt<1>(1), 1) @[Mem.scala 30:22]
+            skip @[Mem.scala 30:22]
+          skip @[Conditional.scala 39:67]
+        else : @[Conditional.scala 39:67]
+          node _T_21 = eq(UInt<2>("h03"), value) @[Conditional.scala 37:30]
+          when _T_21 : @[Conditional.scala 39:67]
+            node _T_22 = eq(rdata, UInt<2>("h02")) @[Mem.scala 31:29]
+            node _T_23 = bits(reset, 0, 0) @[Mem.scala 31:22]
+            node _T_24 = or(_T_22, _T_23) @[Mem.scala 31:22]
+            node _T_25 = eq(_T_24, UInt<1>("h00")) @[Mem.scala 31:22]
+            when _T_25 : @[Mem.scala 31:22]
+              printf(clock, UInt<1>(1), "Assertion failed\n    at Mem.scala:31 is (3.U) { assert(rdata === 2.U) }\n") @[Mem.scala 31:22]
+              stop(clock, UInt<1>(1), 1) @[Mem.scala 31:22]
+              skip @[Mem.scala 31:22]
+            skip @[Conditional.scala 39:67]
+          else : @[Conditional.scala 39:67]
+            node _T_26 = eq(UInt<3>("h04"), value) @[Conditional.scala 37:30]
+            when _T_26 : @[Conditional.scala 39:67]
+              node _T_27 = bits(reset, 0, 0) @[Mem.scala 32:20]
+              node _T_28 = eq(_T_27, UInt<1>("h00")) @[Mem.scala 32:20]
+              when _T_28 : @[Mem.scala 32:20]
+                stop(clock, UInt<1>(1), 0) @[Mem.scala 32:20]
+                skip @[Mem.scala 32:20]
+              skip @[Conditional.scala 39:67]
+    
