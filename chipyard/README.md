@@ -17,8 +17,7 @@ Chipyard is actively developed in the [Berkeley Architecture Research Group][ucb
 * Chipyard Tutorial Exercise slides: https://fires.im/micro19-slides-pdf/03_building_custom_socs.pdf
 
 
-
-    * **Gemmini**: H. Genc, et al., *arXiv*. [PDF](https://arxiv.org/pdf/1911.09925).
+* **Gemmini**: H. Genc, et al., *arXiv*. [PDF](https://arxiv.org/pdf/1911.09925).
 
 
 
